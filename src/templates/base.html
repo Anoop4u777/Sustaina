@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Flowbit CDN -->
+    {% include 'base/css.html' %}
+    <title>{% block head_title %}Sustaina{% endblock head_title %}</title>
+</head>
+<body>
+    <!-- Navbar -->
+    {% include 'nav/navbar.html' %}
+
+    {% block content %}
+    {% endblock content %}
+
+    <!-- Flowbite JS -->
+    {% include 'base/js.html' %}
+</body>
+</html>

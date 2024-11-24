@@ -163,3 +163,9 @@ cython_debug/
 
 # Virtual environment
 venv/
+
+# Ignoring HTML and CSS vendor files
+src/staticfiles/vendors
+
+# Ignoring HTML and CSS files locally
+local-cdn/

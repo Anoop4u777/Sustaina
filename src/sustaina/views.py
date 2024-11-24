@@ -25,4 +25,4 @@ def about_view(request, *args, **kwargs):
         "percent" : percent,
         "total_visit": queryset.count()
         }
-    return render(request, "about.html", context=my_context)
+    return render(request, "base.html", context=my_context)
