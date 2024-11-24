@@ -1,6 +1,12 @@
 Django>5.0,<5.1
 gunicorn
+# For .env files
 python-decouple
+# For Database 
 psycopg[binary]
 dj-database-url
+# For getting files and processing requests.
 requests
+
+# For static files
+whitenoise
