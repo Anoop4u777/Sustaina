@@ -13,3 +13,8 @@ whitenoise
 
 # Social auth
 django-allauth[socialaccount]
+
+# UI for social auth
+django-allauth-ui
+django-widget-tweaks
+slippers
