@@ -64,7 +64,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # For custom commands.
     'commando',
-    # For authentication.
+    # For authentication and UI.
+    "allauth_ui",
     'allauth',
     'allauth.account',
 
@@ -73,6 +74,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    
+    "widget_tweaks",
+    "slippers",
 
     # Custom applications
     'visits',
@@ -160,6 +164,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED=True
 ACCOUNT_EMAIL_VERIFICATION='mandatory'
 ACCOUNT_EMAIL_SUBJECT_PREFIX="[Sustaina] "
+ALLAUTH_UI_THEME = "aqua"
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
