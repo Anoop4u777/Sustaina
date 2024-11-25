@@ -10,3 +10,6 @@ requests
 
 # For static files
 whitenoise
+
+# Social auth
+django-allauth[socialaccount]

@@ -13,6 +13,7 @@
     {% include 'nav/navbar.html' %}
 
     {% block content %}
+    {{request.user.username}}
     {% endblock content %}
 
     <!-- Flowbite JS -->
