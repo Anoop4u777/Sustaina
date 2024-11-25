@@ -165,6 +165,7 @@ ACCOUNT_EMAIL_REQUIRED=True
 ACCOUNT_EMAIL_VERIFICATION='mandatory'
 ACCOUNT_EMAIL_SUBJECT_PREFIX="[Sustaina] "
 ALLAUTH_UI_THEME = "aqua"
+# SOCIALACCOUNT_LOGIN_ON_GET=True
 
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -174,7 +175,24 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SOCIALACCOUNT_PROVIDERS = {
-    'github': {'VERIFIED_EMAIL': True}
+    'google': {
+        'APP': {
+            'client_id': config('GOOGLE_CLIENTID', cast=str),
+            'secret': config('GOOGLE_CLIENTSECRET', cast=str)
+          
+        },
+        'SCOPE': ['profile','email',],
+         'AUTH_PARAMS': {'access_type': 'online'},
+        'METHOD': 'oauth2',
+        'VERIFIED_EMAIL': True,
+    },
+    'github': {
+        'APP': {
+            'client_id': config('GITHUB_CLIENTID', cast=str),
+            'secret': config('GITHUB_CLIENTSECRET', cast=str) 
+        },
+        'VERIFIED_EMAIL': True,
+    }
 }
 
 
