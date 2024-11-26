@@ -31,6 +31,13 @@ def profile_detail_view(request, *args, **kwargs):
     user_object = get_object_or_404(User, username=kwargs['username'])
     # return HttpResponse(f"Hello there {kwargs['username']} - {user_object.id}")
     owner = user_object == request.user
+    # user_groups = request.user.groups.exists()
+    # if user_groups:
+    #     return HttpResponse("Congrats you have group")
+    # print(user_groups)
+    print(user_object.has_perm('subscriptions.basic'),
+          user_object.has_perm('subscriptions.advanced'),
+          user_object.has_perm('subscriptions.pro'))
     context = {
         "instance" : user_object,
         "owner": owner

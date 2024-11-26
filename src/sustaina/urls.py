@@ -28,6 +28,7 @@ urlpatterns = [
     path('about/', about_view),
     path('accounts/', include('allauth.urls')),
     path('profiles/', include('profiles.urls')),
+    path('subscriptions/', include('subscriptions.urls')),
 
     path('protected/', pw_protected_view),
     path('protected/user-only/', user_only_view),
