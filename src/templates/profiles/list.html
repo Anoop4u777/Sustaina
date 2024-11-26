@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head_title %}
+{{ block.super }} - Profile
+{% endblock head_title %}
+
+{% block content %}
+<h1 class="text-lg font-medium">
+    Users
+</h1>
+
+{% if perms.auth %}
+    {% if perms.auth.view_user %}
+        <div>
+        {% for user_instance in object_list %}
+            <p><a href="/profiles/{{user_instance.username}}/details/">{{user_instance.username}}</a></p>
+        {% endfor %}
+        </div>
+    {% else %}
+        <div>You are not allowed to view user data</div>
+    {% endif %}
+{% endif %}
+{% endblock content %}
