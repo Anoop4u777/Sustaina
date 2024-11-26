@@ -80,6 +80,7 @@ INSTALLED_APPS = [
 
     # Custom applications
     'visits',
+    'profiles'
 ]
 
 MIDDLEWARE = [

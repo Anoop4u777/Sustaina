@@ -1,6 +1,7 @@
 import pathlib
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 from visits.models import PageVisit
 
@@ -42,4 +43,8 @@ def pw_protected_view(request, *args, **kwargs):
 
 @login_required
 def user_only_view(request, *args, **kwargs):
+    return render(request, 'protected/user-only.html', {})
+
+@staff_member_required()
+def staff_only_view(request, *args, **kwargs):
     return render(request, 'protected/user-only.html', {})
