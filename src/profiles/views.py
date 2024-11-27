@@ -38,6 +38,7 @@ def profile_detail_view(request, *args, **kwargs):
     print(user_object.has_perm('subscriptions.basic'),
           user_object.has_perm('subscriptions.advanced'),
           user_object.has_perm('subscriptions.pro'))
+    
     context = {
         "instance" : user_object,
         "owner": owner
